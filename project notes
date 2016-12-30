@@ -1,0 +1,25 @@
+
+Followed this tutorial:
+https://www.firebase.com/blog/2016-01-20-tutorial-firebase-react-native.html
+
+Got this error importing firebase:
+https://github.com/facebook/react-native/issues/4968
+
+Fix:
+https://github.com/facebook/react-native/issues/4968#issuecomment-196704261
+
+
+Commented out localhost and got an error:
+https://www.google.com/?gws_rd=ssl#q=unable+to+execute+js+call:+__fbbatchedbridge+is+undefined
+
+Fix:
+react-native bundle --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle
+
+AppHub.io:
+https://dashboard.apphub.io/projects/msZyHBAfCbPIeuMMrxH1/quickstart
+
+To release:
+npm start
+curl http://localhost:8081/index.ios.bundle\?dev\=0 -o main.jsbundle
+
+Then uncomment #2 in appdelegate.m
