@@ -63,7 +63,7 @@ class GroceryList extends React.Component {
     return (
       <View style={styles.container}>
 
-        <StatusBar title="TODO List" />
+        <StatusBar title="What to eat tonight" />
 
         <ListView
           dataSource={this.state.dataSource}
