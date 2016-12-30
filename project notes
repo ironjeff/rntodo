@@ -23,3 +23,24 @@ npm start
 curl http://localhost:8081/index.ios.bundle\?dev\=0 -o main.jsbundle
 
 Then uncomment #2 in appdelegate.m
+
+
+=============
+Got git set up locally with this project
+
+URL: https://github.com/ironjeff/rntodo
+
+Commands:
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/ironjeff/rntodo.git
+// since this errored above I did this:
+git remote set-url origin https://github.com/ironjeff/rntodo.git
+git push -u origin master
+
+The normal flow:
+git add .
+git commit
+git push
+
