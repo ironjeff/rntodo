@@ -1,4 +1,14 @@
 
+TODO:
+Crash:
+2016-12-30 16:20:33.575 [fatal][tid:com.facebook.React.JavaScript] Unable to execute JS call: __fbBatchedBridge is undefined
+
+* Test with new db entries for recipes/restaurants
+* Add search for restaurants, foursquare integration?
+
+Finished:
+* Made 4 tabs: Recipes, Restaurants, TODO, Map
+
 Followed this tutorial:
 https://www.firebase.com/blog/2016-01-20-tutorial-firebase-react-native.html
 
@@ -19,7 +29,10 @@ AppHub.io:
 https://dashboard.apphub.io/projects/msZyHBAfCbPIeuMMrxH1/quickstart
 
 To release:
-npm start
+// From Documents/Projects/rntodo:
+npm start 
+
+// From Documents/Projects/rntodo/ios:
 curl http://localhost:8081/index.ios.bundle\?dev\=0 -o main.jsbundle
 
 Then uncomment #2 in appdelegate.m
@@ -43,4 +56,23 @@ The normal flow:
 git add .
 git commit
 git push
+
+============
+Icons:
+
+Tool to convert icon to base64:
+http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/result/
+
+Website with icons:
+http://www.flaticon.com/free-icon/spaguetti_135513
+
+Note: download 512 and then use 20 for scale in TabBarIOS:
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'eat_out_fav'}
+          icon={{uri: pizza64Icon, scale: 20}}
+          onPress={() => {
+              this.setState({
+                  selectedTab: 'eat_out_fav',
+              });
+          }}>
 

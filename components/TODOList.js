@@ -19,7 +19,7 @@ const {
 
 const FirebaseUrl = 'https://dazzling-heat-3503.firebaseio.com/';
 
-class GroceryList extends React.Component {
+class TODOList extends React.Component {
 
   constructor(props) {
     super(props);
@@ -63,12 +63,13 @@ class GroceryList extends React.Component {
     return (
       <View style={styles.container}>
 
-        <StatusBar title="What to eat tonight" />
+        <StatusBar title="TODO List" />
 
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
-          style={styles.listview}/>
+          style={styles.listview}
+        />
 
         <ActionButton onPress={this._addItem.bind(this)} title="Add" />
       </View>
@@ -77,7 +78,7 @@ class GroceryList extends React.Component {
 
   _addItem() {
     AlertIOS.prompt(
-      'Add New Item',
+      'Add',
       null,
       [
         {
@@ -117,4 +118,4 @@ class GroceryList extends React.Component {
   }
 
 }
-module.exports = GroceryList;
+module.exports = TODOList;
