@@ -1,6 +1,11 @@
-var React = require('react-native');
 const styles = require('../styles.js')
-const { View, TouchableHighlight, Text } = React;
+
+import React, { Component } from 'react';
+import {
+	View, 
+	TouchableHighlight, 
+	Text 
+} from 'react-native';
 
 class ListItem extends React.Component {
   render() {

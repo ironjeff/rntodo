@@ -1,6 +1,5 @@
 'use strict';
 
-const React = require('react-native');
 const Firebase = require('firebase');
 const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
@@ -12,8 +11,8 @@ const TODOList = require('./TODOList');
 const MapTest = require('./MapTest');
 const styles = require('../styles.js');
 
-
-const {
+import React, { Component } from 'react';
+import {
   AppRegistry,
   ListView,
   StyleSheet,
@@ -22,7 +21,7 @@ const {
   TouchableHighlight,
   AlertIOS,
   TabBarIOS,
-} = React;
+} from 'react-native';
 
 const FirebaseUrl = 'https://dazzling-heat-3503.firebaseio.com/';
 
@@ -79,5 +78,29 @@ class MealTypeSelector extends React.Component {
       </TabBarIOS>
     )
   }
+
+  /**
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'todo'}
+          icon={{uri: base64Icon, scale: 3}}
+          onPress={() => {
+              this.setState({
+                  selectedTab: 'todo',
+              });
+          }}>
+          <TODOList />
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'map'}
+          icon={{uri: base64Icon, scale: 3}}
+          onPress={() => {
+              this.setState({
+                  selectedTab: 'map',
+              });
+          }}>
+          <MapTest />
+        </TabBarIOS.Item>
+*/
+
 }
 module.exports = MealTypeSelector;

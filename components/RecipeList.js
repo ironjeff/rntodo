@@ -1,21 +1,21 @@
 'use strict';
 
-const React = require('react-native');
 const Firebase = require('firebase');
 const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
 const styles = require('../styles.js');
 
-const {
+import React, { Component } from 'react';
+import {
+  AlertIOS,
   AppRegistry,
   ListView,
   StyleSheet,
   Text,
-  View,
   TouchableHighlight,
-  AlertIOS,
-} = React;
+  View,
+} from 'react-native';
 
 const FirebaseUrl = 'https://dazzling-heat-3503.firebaseio.com/';
 

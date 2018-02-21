@@ -1,9 +1,15 @@
 'use strict';
 
-const React = require('react-native');
 const styles = require('../styles.js')
 const constants = styles.constants;
-const { StyleSheet, Text, View, TouchableHighlight} = React;
+
+import React, { Component } from 'react';
+import {
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableHighlight
+} from 'react-native';
 
 class ActionButton extends React.Component {
   render() {

@@ -1,13 +1,13 @@
 'use strict';
 
-const React = require('react-native');
 const Firebase = require('firebase');
 const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
 const styles = require('../styles.js')
 
-const {
+import React, { Component } from 'react';
+import {
   AppRegistry,
   ListView,
   StyleSheet,
@@ -16,7 +16,8 @@ const {
   TouchableHighlight,
   AlertIOS,
   MapView,
-} = React;
+} from 'react-native';
+
 
 var _watchID = undefined;
 var _lastTimeWritten = 0;

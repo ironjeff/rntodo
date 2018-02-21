@@ -1,13 +1,13 @@
 'use strict';
 
-const React = require('react-native');
 const Firebase = require('firebase');
 const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
 const styles = require('../styles.js')
 
-const {
+import React, { Component } from 'react';
+import {
   AppRegistry,
   ListView,
   StyleSheet,
@@ -15,9 +15,8 @@ const {
   View,
   TouchableHighlight,
   AlertIOS,
-  TouchableOpacity,   // Handles button presses
-
-} = React;
+  TouchableOpacity,
+} from 'react-native';
 
 class Restaurant extends React.Component {
 	

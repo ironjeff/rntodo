@@ -1,7 +1,12 @@
 'use strict';
-const React = require('react-native');
 const styles = require('../styles.js')
-const { StyleSheet, Text, View} = React;
+
+import React, { Component } from 'react';
+import {
+  StyleSheet, 
+  Text, 
+  View
+} from 'react-native';
 
 class StatusBar extends React.Component {
   render() {
