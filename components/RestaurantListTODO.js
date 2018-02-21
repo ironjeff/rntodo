@@ -63,7 +63,7 @@ class RestaurantListTODO extends React.Component {
     return (
       <View style={styles.container}>
 
-        <StatusBar title="Places To Try" />
+        <StatusBar title="Eat Out - Want List" />
 
         <ListView
           dataSource={this.state.dataSource}
@@ -84,8 +84,10 @@ class RestaurantListTODO extends React.Component {
           text: 'Add',
           onPress: (text) => {
             this.itemsRef.push({ title: text })
-          }
+          },
         },
+        {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
+
       ],
       'plain-text'
     );
@@ -98,7 +100,7 @@ class RestaurantListTODO extends React.Component {
         'Complete',
         null,
         [
-          {text: 'Complete', onPress: (text) => 
+          {text: 'Remove?', onPress: (text) => 
             {
               var time = new Date().toLocaleString();
               this.completedItemsRef.push({ title: item.title, timeComplete: time});

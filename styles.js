@@ -11,6 +11,7 @@ var styles = StyleSheet.create({
   },
   listview: {
     flex: 1,
+    marginTop: -20,
   },
   li: {
     backgroundColor: '#fff',
@@ -40,7 +41,7 @@ var styles = StyleSheet.create({
   },
   navbarTitle: {
     color: '#444',
-    fontSize: 16,
+    fontSize: 25,
     fontWeight: "500"
   },
   statusbar: {

@@ -76,3 +76,8 @@ Note: download 512 and then use 20 for scale in TabBarIOS:
               });
           }}>
 
+
+=============
+Change log:
+12/30/16 - first app built, working, committed, icons, etc...
+2/20/18 - Updated a few minor things, picking this back up.

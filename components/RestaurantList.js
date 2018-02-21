@@ -63,7 +63,7 @@ class RestaurantList extends React.Component {
     return (
       <View style={styles.container}>
 
-        <StatusBar title="Restaurants We Like" />
+        <StatusBar title="Eat Out - Favorites" />
 
         <ListView
           dataSource={this.state.dataSource}
@@ -86,6 +86,7 @@ class RestaurantList extends React.Component {
             this.itemsRef.push({ title: text })
           }
         },
+        {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
       ],
       'plain-text'
     );

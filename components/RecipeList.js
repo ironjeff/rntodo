@@ -87,6 +87,7 @@ class RecipeList extends React.Component {
             this.recipesRef.push({ title: text })
           }
         },
+        {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
       ],
       'plain-text'
     );
