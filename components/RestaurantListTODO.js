@@ -94,23 +94,12 @@ class RestaurantListTODO extends React.Component {
   }
 
   _renderItem(item) {
-
     const onPress = () => {
-      AlertIOS.prompt(
-        'Complete',
-        null,
-        [
-          {text: 'Remove?', onPress: (text) => 
-            {
-              var time = new Date().toLocaleString();
-              this.completedItemsRef.push({ title: item.title, timeComplete: time});
-              this.itemsRef.child(item._key).remove();
-            }
-          },
-          {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
-        ],
-        'default'
-      );
+      // Navigate to a separate recipe view
+      this.props.navigator.push({
+        name: 'recipe',
+        recipe: item,
+      });
     };
 
     return (

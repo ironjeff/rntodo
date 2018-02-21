@@ -96,21 +96,11 @@ class RecipeList extends React.Component {
   _renderItem(item) {
 
     const onPress = () => {
-      AlertIOS.prompt(
-        'Complete',
-        null,
-        [
-          {text: 'Complete', onPress: (text) => 
-            {
-              var time = new Date().toLocaleString();
-              //this.completedrecipesRef.push({ title: item.title, timeComplete: time});
-              this.recipesRef.child(item._key).remove();
-            }
-          },
-          {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
-        ],
-        'default'
-      );
+      // Navigate to a separate recipe view
+      this.props.navigator.push({
+        name: 'recipe',
+        recipe: item,
+      });
     };
 
     return (

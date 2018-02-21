@@ -95,7 +95,7 @@ class RestaurantList extends React.Component {
   _renderItem(item) {
 
     const onPress = () => {
-      // Navigate to a separate movie detail screen
+      // Navigate to a separate restaurant view
       this.props.navigator.push({
         name: 'restaurant',
         restaurant: item,

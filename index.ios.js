@@ -3,6 +3,7 @@
 const React = require('react-native');
 const RecipeList = require('./components/RecipeList');
 const Restaurant = require('./components/Restaurant');
+const Recipe = require('./components/Recipe');
 const RestaurantList = require('./components/RestaurantList');
 const RestaurantListTODO = require('./components/RestaurantListTODO');
 const TODOList = require('./components/TODOList');
@@ -32,8 +33,15 @@ const RouteMapper = (route, navigationOperations, onComponentRef) => {
   } else if (route.name === 'restaurant') {
     return (
       <Restaurant
-        // Pass movie object passed with route down as a prop
         restaurant={route.restaurant}
+        // Pass navigationOperations as navigator prop
+        navigator={navigationOperations}
+      />
+    );
+  } else if (route.name === 'recipe') {
+    return (
+      <Recipe
+        recipe={route.recipe}
         // Pass navigationOperations as navigator prop
         navigator={navigationOperations}
       />
