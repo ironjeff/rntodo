@@ -5,7 +5,7 @@ const Firebase = require('firebase');
 const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
-const styles = require('../styles.js')
+const styles = require('../styles.js');
 
 const {
   AppRegistry,

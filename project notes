@@ -81,3 +81,5 @@ Note: download 512 and then use 20 for scale in TabBarIOS:
 Change log:
 12/30/16 - first app built, working, committed, icons, etc...
 2/20/18 - Updated a few minor things, picking this back up.
+2/20/18 - Added a top level navigator in addition to the tabs.  It'll allow tapping onto a restaurant or recipe.  Added ability to tap on a restaurant - need to fill in that view.
+

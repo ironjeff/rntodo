@@ -11,7 +11,6 @@ var styles = StyleSheet.create({
   },
   listview: {
     flex: 1,
-    marginTop: -20,
   },
   li: {
     backgroundColor: '#fff',

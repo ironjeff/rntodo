@@ -95,21 +95,11 @@ class RestaurantList extends React.Component {
   _renderItem(item) {
 
     const onPress = () => {
-      AlertIOS.prompt(
-        'Complete',
-        null,
-        [
-          {text: 'Complete', onPress: (text) => 
-            {
-              var time = new Date().toLocaleString();
-              this.completedItemsRef.push({ title: item.title, timeComplete: time});
-              this.itemsRef.child(item._key).remove();
-            }
-          },
-          {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
-        ],
-        'default'
-      );
+      // Navigate to a separate movie detail screen
+      this.props.navigator.push({
+        name: 'restaurant',
+        restaurant: item,
+      });
     };
 
     return (
