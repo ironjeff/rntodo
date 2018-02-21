@@ -11,6 +11,7 @@ import {
   TouchableHighlight,
   AlertIOS,
   StatusBar,
+  SafeAreaView,
 } from 'react-native';
 
 import NavigationExperimental from 'react-native-deprecated-custom-components';
@@ -61,14 +62,16 @@ class rntodo extends React.Component {
 
   render() {
     return (
-      <NavigationExperimental.Navigator
-        // Default to list route
-        initialRoute={{name: 'list'}}
-        // Use FloatFromBottom transition between screens
-        configureScene={(route, routeStack) => NavigationExperimental.Navigator.SceneConfigs.FloatFromBottom}
-        // Pass a route mapper functions
-        renderScene={RouteMapper}
-      />
+      <SafeAreaView style={styles.container}>
+        <NavigationExperimental.Navigator
+          // Default to list route
+          initialRoute={{name: 'list'}}
+          // Use FloatFromBottom transition between screens
+          configureScene={(route, routeStack) => NavigationExperimental.Navigator.SceneConfigs.FloatFromBottom}
+          // Pass a route mapper functions
+          renderScene={RouteMapper}
+        />
+      </SafeAreaView>
     )
   }
 }
