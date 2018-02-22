@@ -18,16 +18,27 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import { 
+	Button,
+} from '@shoutem/ui';
+
+
 class Restaurant extends React.Component {
-	
+  static navigationOptions = {
+    title: 'Restaurant Info',
+  };
+
 	render() {
+	    const { params } = this.props.navigation.state;
+	    const itemName = params ? params.restaurant : null;
+
 		return (
 	      	<View>
-		      	<ListItem item={this.props.restaurant} />
+		      	<ListItem item={itemName} />
 	        	<View style={styles.buttonContainer}>
 	            	<Button 
 	            		styleName="dark"
-		              	onPress={() => {this.props.navigator.pop();}}
+		              	onPress={() => {this.props.navigation.goBack();}}
 		            >
 	            		<Text>CLOSE</Text>
 	            	</Button>

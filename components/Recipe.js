@@ -24,15 +24,21 @@ import {
 
 
 class Recipe extends React.Component {
-	
+  static navigationOptions = {
+    title: 'Recipe Info',
+  };
+
 	render() {
+	    const { params } = this.props.navigation.state;
+	    const itemName = params ? params.recipe : null;
+
 		return (
 	      	<View>
-		      	<ListItem item={this.props.recipe} />
+		      	<ListItem item={itemName} />
 	        	<View style={styles.buttonContainer}>
 	            	<Button 
 	            		styleName="dark"
-		              	onPress={() => {this.props.navigator.pop();}}
+		              	onPress={() => {this.props.navigation.goBack();}}
 		            >
 	            		<Text>CLOSE</Text>
 	            	</Button>

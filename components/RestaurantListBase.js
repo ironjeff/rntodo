@@ -3,22 +3,22 @@
 const Firebase = require('firebase');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
-const styles = require('../styles.js');
+const styles = require('../styles.js')
 
 import React, { Component } from 'react';
 import {
-  AlertIOS,
   AppRegistry,
   ListView,
   StyleSheet,
   Text,
-  TouchableHighlight,
   View,
+  TouchableHighlight,
+  AlertIOS,
 } from 'react-native';
 
 const FirebaseUrl = 'https://dazzling-heat-3503.firebaseio.com/';
 
-class RecipeList extends React.Component {
+class RestaurantListBase extends React.Component {
 
   constructor(props) {
     super(props);
@@ -27,34 +27,38 @@ class RecipeList extends React.Component {
         rowHasChanged: (row1, row2) => row1 !== row2,
       })
     };
-    this.recipesRef = this.getRef().child('recipes');
+    var tableName = this.getFireBaseTableName();
+    this.itemsRef = this.getRef().child(tableName);
+    this.completedItemsRef = this.getRef().child('complete');
   }
 
   getRef() {
     return new Firebase(FirebaseUrl);
   }
 
-  listenForRecipes(recipesRef) {
-    recipesRef.on('value', (snap) => {
+  getFireBaseTableName() {}
+
+  listenForItems(itemsRef) {
+    itemsRef.on('value', (snap) => {
 
       // get children as an array
-      var recipes = [];
+      var items = [];
       snap.forEach((child) => {
-        recipes.push({
+        items.push({
           title: child.val().title,
           _key: child.key()
         });
       });
 
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(recipes)
+        dataSource: this.state.dataSource.cloneWithRows(items)
       });
 
     });
   }
 
   componentDidMount() {
-    this.listenForRecipes(this.recipesRef);
+    this.listenForItems(this.itemsRef);
   }
 
   render() {
@@ -63,8 +67,7 @@ class RecipeList extends React.Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
-          style={styles.listview}
-        />
+          style={styles.listview}/>
 
         <ActionButton onPress={this._addItem.bind(this)} title="Add" />
       </View>
@@ -73,13 +76,13 @@ class RecipeList extends React.Component {
 
   _addItem() {
     AlertIOS.prompt(
-      'Name of Meal',
+      'Restaurant Name',
       null,
       [
         {
           text: 'Add',
           onPress: (text) => {
-            this.recipesRef.push({ title: text })
+            this.itemsRef.push({ title: text })
           }
         },
         {text: 'Cancel', onPress: (text) => console.log('Cancelled')}
@@ -91,7 +94,7 @@ class RecipeList extends React.Component {
   _renderItem(item) {
 
     const onPress = () => {
-      this.props.navigation.navigate('Recipe', {recipe: item});
+      this.props.navigation.navigate('Restaurant', {restaurant: item});
     };
 
     return (
@@ -100,4 +103,4 @@ class RecipeList extends React.Component {
   }
 
 }
-module.exports = RecipeList;
+module.exports = RestaurantListBase;
