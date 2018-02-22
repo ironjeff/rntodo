@@ -61,7 +61,7 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 16,
     paddingTop: 14,
-    paddingBottom: 64,
+    paddingBottom: 14,
   },
   map: {
     height: 455,

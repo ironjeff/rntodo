@@ -25,18 +25,13 @@ class Restaurant extends React.Component {
 	      	<View>
 		      	<ListItem item={this.props.restaurant} />
 	        	<View style={styles.buttonContainer}>
-	            {/* Press handler */}
-	            <TouchableOpacity
-	              // Go to the previous screen
-	              onPress={() => {this.props.navigator.pop();}}
-	              // Dim button a little bit when pressed
-	              activeOpacity={0.7}
-	              // Pass button style
-	              style={styles.button}
-	            >
-	              <Text style={styles.buttonText}>CLOSE</Text>
-	            </TouchableOpacity>
-	          	</View>
+	            	<Button 
+	            		styleName="dark"
+		              	onPress={() => {this.props.navigator.pop();}}
+		            >
+	            		<Text>CLOSE</Text>
+	            	</Button>
+	            </View>
 	         </View>
 		)
 	}

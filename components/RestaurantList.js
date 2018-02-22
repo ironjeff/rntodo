@@ -1,7 +1,6 @@
 'use strict';
 
 const Firebase = require('firebase');
-const StatusBar = require('./StatusBar');
 const ActionButton = require('./ActionButton');
 const ListItem = require('./ListItem');
 const styles = require('../styles.js')
@@ -62,9 +61,6 @@ class RestaurantList extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
-        <StatusBar title="Eat Out - Favorites" />
-
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
