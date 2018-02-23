@@ -1,3 +1,5 @@
+NOTE: 2/22/2018
+I cloned this into a new folder called WhatShouldWeEat to restart from a newer template.  It now works using online/offline mode in release mode
 
 TODO:
 Crash:
@@ -36,6 +38,10 @@ npm start
 curl http://localhost:8081/index.ios.bundle\?dev\=0 -o main.jsbundle
 
 Then uncomment #2 in appdelegate.m
+
+=============
+Full reset
+rm -rf node_modules/ && npm cache clean && npm install && npm start -- --reset-cache
 
 
 =============
@@ -82,4 +88,38 @@ Change log:
 12/30/16 - first app built, working, committed, icons, etc...
 2/20/18 - Updated a few minor things, picking this back up.
 2/20/18 - Added a top level navigator in addition to the tabs.  It'll allow tapping onto a restaurant or recipe.  Added ability to tap on a restaurant - need to fill in that view.
+
+
+
+react-native bundle --entry-file='index.ios.js' --bundle-output='./ios/rntodo/main.jsbundle' --dev=false --platform='ios' --assets-dest='./ios'
+
+============ getting started ====================
+Success! Created WhatShouldWeEat at /Users/jeffhuang/Documents/Projects/WhatShouldWeEat
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server so you can open your app in the Expo
+    app on your phone.
+
+  npm run ios
+    (Mac only, requires Xcode)
+    Starts the development server and loads your app in an iOS simulator.
+
+  npm run android
+    (Requires Android build tools)
+    Starts the development server and loads your app on a connected Android
+    device or emulator.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd WhatShouldWeEat
+  npm start
+
 
